@@ -6,8 +6,15 @@ const Web3Provider = ({children}) => {
         contractInstance:null,
         selectedAccount:null,
     })
+    const updateWeb3State=(newState)=>{
+        setWeb3State(prevState=>({
+            ...prevState,
+            ...newState
+        }))
+    }
+    
     return ( 
-        <Web3Context.Provider>
+        <Web3Context.Provider value={{web3State, updateWeb3State}}>
             {Children}
         </Web3Context.Provider>
      );
