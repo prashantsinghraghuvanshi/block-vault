@@ -1,11 +1,13 @@
-import { Children, useState } from "react";
+import { useState } from "react";
 import { Web3Context } from "./createWeb3Context";
 
 const Web3Provider = ({children}) => {
+    
     const [web3State, setWeb3State]=useState({
         contractInstance:null,
         selectedAccount:null,
     })
+
     const updateWeb3State=(newState)=>{
         setWeb3State(prevState=>({
             ...prevState,
@@ -15,7 +17,7 @@ const Web3Provider = ({children}) => {
     
     return ( 
         <Web3Context.Provider value={{web3State, updateWeb3State}}>
-            {Children}
+            {children}
         </Web3Context.Provider>
      );
 }

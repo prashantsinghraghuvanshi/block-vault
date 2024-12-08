@@ -11,15 +11,14 @@ export const connectWallet=async()=>{
 
     const selectedAccount=accounts[0];
 
-    const provider=ethers.BrowserProvider(window.ethereum);
-    const signer=provider.getSigner();
+    const provider=ethers.BrowserProvider(window.ethereum);     // to read data on network
+    const signer=provider.getSigner();                          // to write data on network
 
     const contractAddress="";
-    // contractAbi to be implemented 
-    const contractAbi="";
+    const contractAbi="";                                       // contractAbi to be implemented 
     const contractInstance=new ethers.Contract(contractAddress,contractAbi,signer);
 
     return {contractInstance, selectedAccount};
 }
 
-export default connectWallet;
+// export default connectWallet;

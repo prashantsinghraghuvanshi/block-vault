@@ -5,7 +5,7 @@ const Wallet = () => {
     // const web3State=useWeb3Context()
 
     return (<>
-        <h2>Wallet</h2>
+        <h2>Hello from wallet.</h2>
         <button onClick={connectWallet}>Connect Wallet</button>
     </>);
 }
