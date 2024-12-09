@@ -4,7 +4,7 @@
   "description": "server for block-vault project",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Prashant Singh",
@@ -13,6 +13,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ethers": "^5.7.1",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "mongodb": "^6.11.0",
+    "mongoose": "^8.8.4"
   }
 }
