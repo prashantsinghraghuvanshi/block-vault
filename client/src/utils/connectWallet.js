@@ -1,4 +1,5 @@
 import {ethers} from "ethers";
+import axios from "axios"
 import toast from "react-hot-toast";
 import contractAbi from "../constants/contractAbi.json";
 
@@ -20,6 +21,16 @@ export const connectWallet=async()=>{
         const provider=new ethers.BrowserProvider(window.ethereum);     // to read data on network
         const signer=await provider.getSigner();                          // to write data on network
     
+        const message="Welcome to Block Vault Website.";
+        const signature= await signer.signMessage(message);
+
+        const dataSignature={
+            signature
+        }
+        const url=`http://localhost:3001/api/auth?address=${selectedAccount}`;
+        const res= await axios.post(url, dataSignature);
+        console.log(res.data);
+
         const contractAddress="0xf354B21ead718418554A1e9b563B3280Aa3F4721";            
         const contractInstance=new ethers.Contract(contractAddress,contractAbi,signer);
     
