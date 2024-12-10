@@ -23,6 +23,8 @@ a:hover {
 }
 
 body {
+  background: url('./assets/wallpaperflare.com_wallpaper\ \(2\).jpg');
+  background-size: cover;
   margin: 0;
   display: flex;
   place-items: center;

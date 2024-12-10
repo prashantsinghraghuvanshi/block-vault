@@ -13,7 +13,6 @@ contract Upload {
     function uploadFile(address _user, string memory _ipfsHash) external {
         userFiles[_user].push(_ipfsHash);
     }
-    
 
     function viewFiles(address _user) external view onlyOwnerAccess(_user) returns (string[] memory) {
         return userFiles[_user];
