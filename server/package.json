@@ -10,11 +10,14 @@
   "author": "Prashant Singh",
   "license": "ISC",
   "dependencies": {
+    "@pinata/sdk": "^2.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ethers": "^5.7.1",
     "express": "^4.21.1",
     "mongodb": "^6.11.0",
-    "mongoose": "^8.8.4"
+    "mongoose": "^8.8.4",
+    "multer": "^1.4.5-lts.1",
+    "pinata": "^1.9.1"
   }
 }

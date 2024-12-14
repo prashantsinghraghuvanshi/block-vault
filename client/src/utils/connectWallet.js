@@ -16,7 +16,7 @@ export const connectWallet=async()=>{
     
         const selectedAccount=accounts[0];
     
-        // console.log(selectedAccount);
+        console.log(selectedAccount);
     
         const provider=new ethers.BrowserProvider(window.ethereum);     // to read data on network
         const signer=await provider.getSigner();                          // to write data on network

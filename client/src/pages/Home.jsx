@@ -1,6 +1,8 @@
 import { useWeb3Context } from "../contexts/useWeb3Context";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import UploadImage from "../components/UploadImage";
+import GetImage from "../components/GetImage";
 
 const Home = () => {
     const navigateTo=useNavigate();
@@ -14,9 +16,17 @@ const Home = () => {
     },[selectedAccount, navigateTo]);
 
     return (
-        <h1>
-            Home Page
-        </h1>
+        <div>
+            <h1>
+                Block Vault - Home
+            </h1>
+            <div>
+                <UploadImage />
+            </div>
+            <div>
+                <GetImage />
+            </div>
+        </div>
     );
 }
  
