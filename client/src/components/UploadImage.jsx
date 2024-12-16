@@ -1,5 +1,5 @@
 import axios from "axios";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 import { useState } from "react";
 import { useWeb3Context } from "../contexts/useWeb3Context";
 
@@ -9,17 +9,15 @@ const UploadImage = () => {
   const { selectedAccount, contractInstance } = web3State;
 
   const uploadImageHash = async (ipfsHash) => {
-    const transaction = await contractInstance.uploadFile(
-      selectedAccount,
-      ipfsHash
+    await toast.promise(
+      contractInstance.uploadFile(selectedAccount, ipfsHash),
+      {
+        loading: "Transaction is pending...",
+        success: "Transaction is successful",
+        error: "Transaction Failed",
+      }
     );
-    
-    await toast.promise(transaction.wait(),{
-        loading:"Transaction is pending...",
-        success:"Transaction is successful",
-        error:"Transaction Failed"
-      })
-    };
+  };
 
   const handleImageUpload = async () => {
     try {
@@ -31,10 +29,9 @@ const UploadImage = () => {
 
       toast.success("image uploaded successfully");
       await uploadImageHash(res.data.ipfsHash);
-      
     } catch (error) {
-        console.log(error);
-        toast.error("image upload failed");
+      console.log(error);
+      toast.error("image upload failed");
     }
   };
 

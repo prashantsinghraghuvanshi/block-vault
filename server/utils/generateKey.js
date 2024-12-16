@@ -1,7 +1,7 @@
-const crypto= require('crypto');
+const crypto = require("crypto");
 
-const generateEncryptionKey=(length)=>{
-    return crypto.randomBytes(length/2).toString('hex');
-}
+const generateEncryptionKey = (length) => {
+  return crypto.randomBytes(length / 2).toString("hex");
+};
 
-module.exports={generateEncryptionKey};
+module.exports = { generateEncryptionKey };

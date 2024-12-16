@@ -33,7 +33,12 @@ async function uploadImageController(req, res, next) {
 
     const resPinata = await pinata.pinJSONToIPFS({ encryptedData, iv });
     console.log(resPinata);
-    res.status(200).json({ message: "Image uploaded successfully!", ipfsHash: resPinata.IpfsHash });
+    res
+      .status(200)
+      .json({
+        message: "Image uploaded successfully!",
+        ipfsHash: resPinata.IpfsHash,
+      });
   } catch (error) {
     res.status(500).json({ message: "Internal Server Error" });
     console.error(error);
