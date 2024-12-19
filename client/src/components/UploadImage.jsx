@@ -49,22 +49,29 @@ const UploadImage = () => {
   };
 
   return (
-    <div className="upload-container">
-      <h2>Upload Image with Web3 Security</h2>
-      <input
-        type="file"
-        onChange={(e) => setFile(e.target.files[0])}
-        disabled={loading}
-      ></input>
-      {file ? (
-        <div>
-          <button onClick={handleImageUpload} disabled={loading || !file}>
+    <div className="upload-container p-8 max-w-2xl w-full mx-auto">
+      <h2 className="text-3xl font-bold text-center text-white mb-6">
+        Upload Image with Web3 Security
+      </h2>
+      <div className="flex flex-col items-center">
+        <input
+          type="file"
+          className="mb-4 p-2 border-2 border-gray-300 rounded-md"
+          onChange={(e) => setFile(e.target.files[0])}
+          disabled={loading}
+        />
+        {file ? (
+          <button
+            className="bg-green-500 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-green-400 transition duration-300"
+            onClick={handleImageUpload}
+            disabled={loading || !file}
+          >
             <ImageUp />
           </button>
-        </div>
-      ) : (
-        <p>Choose a file to upload.</p>
-      )}
+        ) : (
+          <p className="text-gray-300 mt-4">Choose a file to upload.</p>
+        )}
+      </div>
     </div>
   );
 };

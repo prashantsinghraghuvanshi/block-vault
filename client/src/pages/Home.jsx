@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import UploadImage from "../components/UploadImage";
 import GetImage from "../components/GetImage";
-import "./Home.css";
 
 const Home = () => {
   const navigateTo = useNavigate();
@@ -18,9 +17,13 @@ const Home = () => {
 
   return (
     <>
-      <h1>Block Vault - Home</h1>
-      <UploadImage />
-      <GetImage />
+      <h1 className="text-4xl font-bold text-center text-indigo-600 mb-12">
+        Block Vault - Home
+      </h1>
+      <div className="text-lime-100 min-h-screen flex flex-col justify-center items-center">
+        <UploadImage />
+        <GetImage />
+      </div>
     </>
   );
 };
