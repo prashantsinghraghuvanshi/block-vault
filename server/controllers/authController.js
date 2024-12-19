@@ -1,5 +1,7 @@
 const ethers = require("ethers");
 const UserModel = require("../models/User");
+const jwt= require('jsonwebtoken');
+const {JWT_SECRETKEY}= require('../config/serverConfig');
 
 async function authController(req, res, next) {
   try {
@@ -22,8 +24,10 @@ async function authController(req, res, next) {
       if (!user) {
         UserModel.create({ userAddress: address });
       }
-
-      res.status(200).json({ message: "Authentication Successfull." });
+      const token= jwt.sign({
+        address
+      }, JWT_SECRETKEY);
+      res.status(200).json({ message: "Authentication Successfull.", token });
     } else {
       res.status(400).json({ message: "Authentication Failed." });
     }

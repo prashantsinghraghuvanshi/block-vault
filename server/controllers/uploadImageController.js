@@ -6,9 +6,9 @@ const { encryptFile } = require("../utils/encryption");
 
 async function uploadImageController(req, res, next) {
   try {
-    const adddress = "0xC269204F1C278a71F7003BC77379B304F7c210Dc";
-    const userAdddress = adddress.toLowerCase();
-    const user = await UserModel.findOne({ userAddress: userAdddress });
+    const address = req.address;
+    const userAddress = address.toLowerCase();
+    const user = await UserModel.findOne({ userAddress: userAddress });
     if (!user) {
       throw new Error("User does not exists!");
     }
