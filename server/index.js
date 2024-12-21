@@ -5,12 +5,14 @@ const { MONGODB_URL, PORT } = require("./config/serverConfig");
 const { connectDB } = require("./db/connect");
 const authRoute = require("./routes/authRoute");
 const uploadImageRoute = require("./routes/uploadImageRoute");
+const getImageRoute = require("./routes/getImageRoute");
 
 app.use(cors());
 app.use(express.json());
 
 app.use("/api", authRoute);
 app.use("/api", uploadImageRoute);
+app.use("/api", getImageRoute);
 
 async function serverStart() {
   try {
