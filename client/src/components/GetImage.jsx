@@ -59,7 +59,7 @@ const GetImage = () => {
 
   return (
     <>
-      <h2 className="text-3xl font-bold text-center text-white mb-6">
+      <h2 className="text-3xl font-sans text-center mb-6">
         Fetching images through server!
       </h2>
       {!loading ? (

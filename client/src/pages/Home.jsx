@@ -17,11 +17,11 @@ const Home = () => {
 
   return (
     <>
-      <h1 className="text-4xl font-bold text-center text-white mt-8 mb-12">
+      <h1 className="text-4xl text-lime-100 font-semibold text-center mt-8 mb-4">
         Block Vault - Home
       </h1>
 
-      <div className="text-lime-100 min-h-screen flex flex-col justify-center items-center">
+      <div className="text-lime-100 min-h-screen flex flex-col justify-center items-center mb-10">
         <UploadImage />
         <GetImage />
       </div>

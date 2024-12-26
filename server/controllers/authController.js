@@ -24,6 +24,7 @@ async function authController(req, res, next) {
       if (!user) {
         UserModel.create({ userAddress: address });
       }
+      
       const token= jwt.sign({
         address
       }, JWT_SECRETKEY);

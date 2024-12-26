@@ -50,7 +50,7 @@ const UploadImage = () => {
 
   return (
     <div className="upload-container p-8 max-w-2xl w-full mx-auto">
-      <h2 className="text-3xl font-bold text-center text-white mb-6">
+      <h2 className="text-3xl font-sans text-center mb-6">
         Upload Image with Web3 Security
       </h2>
       <div className="flex flex-col items-center">
@@ -62,14 +62,15 @@ const UploadImage = () => {
         />
         {file ? (
           <button
-            className="bg-green-500 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-green-400 transition duration-300"
+            className="bg-red-600 text-white flex flex-row justify-between font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-red-500 transition duration-300"
             onClick={handleImageUpload}
             disabled={loading || !file}
           >
             <ImageUp />
+            <p className="ml-4">upload Image</p>
           </button>
         ) : (
-          <p className="text-gray-300 mt-4">Choose a file to upload.</p>
+          <p className="text-yellow-500 mt-4">Choose a file to upload.</p>
         )}
       </div>
     </div>
