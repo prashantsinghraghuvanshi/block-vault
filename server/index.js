@@ -9,7 +9,7 @@ const getImageRoute = require("./routes/getImageRoute");
 
 app.use(cors(
   {
-    origin: ["https://block-vault-app.vercel.app"],
+    origin: ["https://deploy-mern-1whq.vercel.app"],
     methods: ["POST","GET"],
     credentials: true
   }
