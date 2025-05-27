@@ -27,7 +27,7 @@ export const connectWallet = async () => {
     const dataSignature = {
       signature,
     };
-    const url = `http://localhost:3000/api/auth?address=${selectedAccount}`;
+    const url = `https://block-vault-api.vercel.app/api/auth?address=${selectedAccount}`;
     const res = await axios.post(url, dataSignature);
     // console.log(res.data);
     const token = res.data.token;

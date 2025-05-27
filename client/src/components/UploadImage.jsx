@@ -26,7 +26,7 @@ const UploadImage = () => {
       setLoading(true);
       const formData = new FormData();
       formData.append("file", file);
-      const url = `http://localhost:3000/api/uploadImage`;
+      const url = `https://block-vault-api.vercel.app/api/uploadImage`;
 
       const token=localStorage.getItem("token");
       const config={
